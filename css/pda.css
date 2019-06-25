@@ -1,0 +1,169 @@
+  #nb-pda-velum{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .nb-velum-top{
+    position: absolute;
+    width: 100%;
+    height: 43%;  
+    top: 0;
+    background: linear-gradient(to bottom, #000, rgba(0,0,0,0));
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+  .nb-velum-base-top{
+    width: 100%;
+    height: calc(100% - 120px);
+    background: url(../img/velum-top-fr.svg) repeat;
+  }
+  .nb-velum-base-bottom{
+     width: 100%;
+    height: calc(100% - 120px);
+    background: url(../img/velum-top-fr.svg) repeat;
+  }
+  .nb-velum-bord{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    min-width: 1064px;
+  }
+
+  .vt-wrapper-inner {
+    position: relative;
+    align-self: stretch;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .vt-wrapper-inner:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .vt-wrapper-inner._bg-0 {
+    background: url(../img/velum-top-left.svg) repeat-x;
+  }
+
+  .vt-wrapper-inner._bg-1 {
+    background: url(../img/velum-top-center.svg) no-repeat;
+    max-width: 378.333px;
+  }
+
+  .vt-wrapper-inner._bg-2 {
+    background: url(../img/velum-top-right.svg) repeat-x;
+  }
+
+  .vt-wrapper-inner._bg-3 {
+    background: url(../img/velum-bottom-left.svg) repeat-x;
+  }
+
+  .vt-wrapper-inner._bg-4 {
+    background: url(../img/velum-bottom-center.svg) no-repeat;
+    max-width: 378.333px;
+  }
+
+  .vt-wrapper-inner._bg-5 {
+    background: url(../img/velum-bottom-right.svg) repeat-x;
+  }
+
+  .nb-velum-bottom{
+    position: absolute;
+    width: 100%;
+    height: 43%;  
+    background: linear-gradient(to top, #000, rgba(0,0,0,0));
+    bottom: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+
+  .nb-velum-center{
+    position: absolute;
+    width: 100%;
+    height: 90px;  
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(../img/velum-center-center.svg) repeat-x;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+
+  .nb-velum-center span{
+    font-family: 'Exo 2',"Ubuntu Condensed", sans-serif;
+    font-size: 65px;
+    line-height: 1.41;
+    font-weight: bold;
+    color: #bfc2c3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    letter-spacing: 3px;
+    opacity: 1;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+
+  .vt-w-br0{
+    width: 600px;
+    height: 35px;
+    margin-left: -251px;
+    margin-top: 86px;
+    background: url(../img/velum-top-h0.svg);
+  }
+
+  .vt-w-userid{
+	box-sizing: border-box;
+  	display: inline-block;
+  	padding: 0 1em 1em;
+  	text-transform: uppercase;
+  }
+
+  .vt-w-userid span {display: inline-block;}
+
+  .vt-w-userid{
+  	position: absolute;
+	  margin-left: 80px;
+	  margin-top: -75px;
+	  width: 550px;
+	  opacity: 0;
+    z-index: 1;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+
+  .uid_title{
+    font-family: "Exo 2","Ubuntu Condensed",Arial,sans-serif;
+  	/*font: normal 100 22px/1.2em "Ubuntu Condensed", Arial, sans-serif;*/
+  	letter-spacing: .06em;
+  	color: #fff;
+    font-size: 20px;
+    z-index: 1000px;
+  }
+
+  .uid_uacid{
+    font-family: "Exo 2","Ubuntu Condensed",Arial,sans-serif;
+	/*font: normal 100 22px/1.2em "Ubuntu Condensed", Arial, sans-serif;*/
+  	letter-spacing: .06em;
+  	color: #bfc2c3;
+    font-size: 20px;
+  }
+
+  .nb-velum-center span{
+    cursor: pointer;
+    z-index: 1000;
+  }

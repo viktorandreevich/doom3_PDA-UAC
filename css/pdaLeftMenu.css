@@ -1,0 +1,94 @@
+/*Buttons*/
+  .nb-pda-btn{
+    width: 210px;
+    height: 24px;
+    /*border: 2px solid #70898b;*/
+    /*background: linear-gradient(to bottom, rgba(76, 102, 114, 1.0), #324444);*/
+    background: url(../img/pda_menu_itm.svg) -3px, 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .nb-pda-se-1-1{
+    position: relative;
+    font-family: 'Exo 2',"Ubuntu Condensed", sans-serif;
+    text-shadow: 0px 1px 2px black, 0em 0em 0em darkseagreen;
+    letter-spacing: .1em;
+    color: #9eddde;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    float: right;
+    margin-right: 10px;
+    margin-top: -30px;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;  
+  }
+
+  .nb-pda-melu-left{
+    width: 300px;
+    margin-left: -43px;
+  }
+
+  .nb-pda-melu-left li{
+     list-style:none;
+  }
+
+  .nb-pda-se-0{
+    position: absolute;
+    width: 13px;
+    height: 23px; 
+    border-right: 2px solid rgba(143, 185, 192, 0.44);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;  
+  }
+
+  .nb-pda-se-1{
+    position: absolute;
+    width: 195px;
+    height: 24px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    margin-left: 0px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;  
+  }
+  .nb-pda-se-1-0{
+    width: 195px;
+    height: 24px;
+    /*border: 2px solid #70898b;*/
+    /*background: linear-gradient(to bottom, rgba(76, 102, 114, 1.0), #324444);*/
+    background: url(../img/pda_menu_itm.svg) 197px, 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    /*margin-left: 44px;*/
+    opacity: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;  
+  }
+  .nb-pda-menu-chi{
+    position: absolute;
+    width: 11px;
+    height: 19px;
+    background-color: rgba(175, 223, 220, 0.8);
+    top: 2px;
+    left: 4px;
+    border: 1px solid #6c8381;
+    opacity: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;  
+  }
+
+  .nb-pda-melu-left li{
+    opacity: 0;
+    margin-left: -210px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s; 
+  }
