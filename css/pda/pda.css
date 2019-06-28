@@ -167,3 +167,81 @@
     cursor: pointer;
     z-index: 1000;
   }
+
+  /*Bottom panels*/
+.pda-velum-panel-left{
+  position: absolute;
+  background: #212121;
+  display: inline-block;
+  padding-bottom: 15px;
+  top: 13px;
+  width: 43.5%;
+  height: 82%;
+  opacity: 1;
+  filter: drop-shadow(0px 0px 3px rgb(81, 99, 101));
+  left: 11px;
+}
+
+.pda-velum-panel-left p{
+  color: #52635d;
+  text-shadow: 0px 1px 2px black, 0em 0em 0em darkseagreen;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 22px;
+  margin-left: 6px;
+}
+  
+.pda-velum-panel-left::before, .pda-velum-panel-left:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.pda-velum-panel-left::after {
+  left: 100%;
+  border-left: 17px solid #212121;
+  border-top: 19px solid transparent;
+}
+
+  /*Buttons*/
+.btn_control_case{
+  position: absolute;
+  top: 40;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nb-velum-bottom ul li{
+  display:inline-block;
+  float: right;
+  width:20%;
+  margin:0;
+  padding:0;
+}
+
+.pda-btn-exit {
+ 
+}
+.pda-btn-exit a {
+
+}
+.pda-btn-exit::before, .pda-btn-exit::after {
+
+}
+.pda-btn-exit::before {
+
+}
+.pda-btn-exit::after {
+
+}
+.pda-btn-exit:hover::before, .pda-btn-exit:hover::after {
+
+}
+.pda-btn-exit:focus {
+
+}
+.pda-btn-exit:focus::before, .pda-btn-exit:focus::after {
+
+}

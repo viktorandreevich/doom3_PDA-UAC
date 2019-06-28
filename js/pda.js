@@ -2,6 +2,7 @@
 	/*Widjets space*/
 	var widjets_space  = '.nb-pda-widjets-space',  // Контейнер для виджетов
       user_id_title  = '.vt-w-userid',           // Титульная надпись
+      velum          = '.nb-pda-velum',
       velum_top 	   = '.nb-velum-top',          // Верхняя створка
       velum_bottom   = '.nb-velum-bottom',       // Надпись "NB-PDA" КНОПКА
       velum_center   = '.nb-velum-center',       // Нижняя створка
@@ -49,13 +50,44 @@
                 .add("<div>", {class: "vt-wrapper-inner _bg-5"})
               })
               .add("<div>",{class: "nb-velum-base-bottom"})
-            })
+
+              /*Кнопки нижний ряд*/
+              /*.add("<ul>",{
+                class: "btn_control_case",
+                append: $("<li>",{
+                  append: $("<p>",{
+                    append: $("<button>",{
+                      class: "pda-btn-exit",
+                        append: $("<a>",{
+                          text: "EXIT"
+                        })
+                    })
+                  })
+                })
+              }) */ 
+            })  
         })
+            /**/
         .add("<div>",{
           class: "nb-pda-widjets-space"
         }); 
+      
         return pda_base;
     	}
+    // ---------------------------------------------------------------------
+      function bottom_menu_draw(){
+        var bottom_panel = $("<div>",{
+          class: "pda-velum-panel-left",
+          append: $("<p>",{
+            text: "цели миссии"
+          })
+        });
+        bottom_panel.appendTo($(velum_bottom));
+      }
+    // ---------------------------------------------------------------------
+      function bottom_menu_kill(){
+        $(".pda-velum-panel-left").remove();
+      }
     // ---------------------------------------------------------------------
     	function open(){
         $(velum_top).css('height','16%');
@@ -68,6 +100,8 @@
               show_left_menu($('.nb-pda-melu-left ul > li'));
           }, 300);
         }, 300);
+        /**/
+        bottom_menu_draw();
     	}    
     // ---------------------------------------------------------------------
     	function close(){
@@ -90,6 +124,8 @@
             clearInterval(close_pda_timer);
           }
         }, 500);  
+        /**/
+        bottom_menu_kill();
     	}    
     // ---------------------------------------------------------------------
     	function create_left_menu(itms){
