@@ -171,24 +171,50 @@
   /*Bottom panels*/
 .pda-velum-panel-left{
   position: absolute;
-  background: #212121;
+  background: #292b2c;
   display: inline-block;
-  padding-bottom: 15px;
   top: 13px;
-  width: 43.5%;
-  height: 82%;
+  height: 106px;
   opacity: 1;
-  filter: drop-shadow(0px 0px 3px rgb(81, 99, 101));
+  filter: drop-shadow(0px 0px 1px rgb(99,99,99));
   left: 11px;
 }
 
-.pda-velum-panel-left p{
+.pvp-background{
+  position: absolute;
+  background: url(../../img/pda/pda/gridbg_glow.png), #292b2c repeat;
+  top: calc(-100vh + 106px);
+  width: 100vw;
+  height: 100vh;
+}
+
+.pvpl-container{
+  position: absolute;
+  border-radius: 33px;
+  width: calc(100% + 17px);
+  height: 100%;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.pda-velum-panel-left span{
+  position: relative;
   color: #52635d;
   text-shadow: 0px 1px 2px black, 0em 0em 0em darkseagreen;
   text-transform: uppercase;
   letter-spacing: .06em;
   font-size: 22px;
   margin-left: 6px;
+  z-index: 1000;
+}
+.pda-velum-panel-left p{
+  position: relative;
+  color: #9eddde;
+  text-shadow: 0px 1px 2px black, 0em 0em 0em darkseagreen;
+  letter-spacing: .04em;
+  font-size: 18px;
+  margin-left: 6px;
+  z-index: 1000;
 }
   
 .pda-velum-panel-left::before, .pda-velum-panel-left:after {
@@ -201,7 +227,7 @@
 
 .pda-velum-panel-left::after {
   left: 100%;
-  border-left: 17px solid #212121;
+  border-left: 17px solid #292b2c;
   border-top: 19px solid transparent;
 }
 

@@ -71,18 +71,48 @@
         .add("<div>",{
           class: "nb-pda-widjets-space"
         }); 
-      
+        
         return pda_base;
     	}
     // ---------------------------------------------------------------------
       function bottom_menu_draw(){
-        var bottom_panel = $("<div>",{
-          class: "pda-velum-panel-left",
-          append: $("<p>",{
-            text: "цели миссии"
-          })
+
+        var create_menu = function(){
+          var bottom_panel = $("<div>",{
+            class: "pda-velum-panel-left",
+
+            append: $("<div>",{
+              class: "pvpl-container",
+              append: $("<div>",{
+                class: "pvp-background",
+                css:{
+                  "background-position": "-11px " + ($(velum_bottom).height() - 13 - 106)+"px"
+                },           
+              })
+            })
+            /**/
+            .add("<span>",{
+              text: "Цели миссии"
+            })
+            .add("<p>",{
+              text: "По пути в командный центр предстоит пройти сканирование и получить PDA-карту."
+            })
+            /**/
+            
+          });
+          bottom_panel.appendTo($(velum_bottom));
+        }
+        create_menu();
+        $(window).resize(function(){
+          bottom_menu_resize();
         });
-        bottom_panel.appendTo($(velum_bottom));
+        $(window).resize();
+      }
+    // ---------------------------------------------------------------------  
+      function bottom_menu_resize(){
+        $(".pvp-background").css("background-position", "-11px " + 
+          ($(velum_bottom).height() - 13 - 106)+"px");
+        $(".pda-velum-panel-left").css("width", $("._bg-3").width() + ($("._bg-4").width() * 0.3));
       }
     // ---------------------------------------------------------------------
       function bottom_menu_kill(){
@@ -98,10 +128,10 @@
           setTimeout(function(){
             $(widjets_space).css('opacity','1');
               show_left_menu($('.nb-pda-melu-left ul > li'));
+              bottom_menu_draw();
           }, 300);
         }, 300);
         /**/
-        bottom_menu_draw();
     	}    
     // ---------------------------------------------------------------------
     	function close(){
