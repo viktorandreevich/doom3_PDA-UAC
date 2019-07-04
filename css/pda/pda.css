@@ -180,6 +180,18 @@
   left: 11px;
 }
 
+.pda-velum-panel-right{
+  position: absolute;
+  background: #292b2c;
+  display: inline-block;
+  top: 32px;
+  height: 87px;
+  width: 50%;
+  opacity: 1;
+  filter: drop-shadow(0px 0px 1px rgb(99,99,99));
+  right: 33px;
+}
+
 .pvp-background{
   position: absolute;
   background: url(../../img/pda/pda/gridbg_glow.png), #292b2c repeat;
@@ -188,9 +200,25 @@
   height: 100vh;
 }
 
+.pvp-background-nor{
+  position: absolute;
+  background: url(../../img/pda/pda/gridbg_glow.png), #292b2c repeat;
+  top: calc(-100vh + 88px);
+  width: 100vw;
+  height: 100vh;
+}
+
 .pvpl-container{
   position: absolute;
   border-radius: 33px;
+  width: calc(100% + 17px);
+  height: 100%;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.pvpl-container-nor{
+  position: absolute;
   width: calc(100% + 17px);
   height: 100%;
   overflow: hidden;

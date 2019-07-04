@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="css/pda/future.css">
 <link rel="stylesheet" href="/fonts/ubuntu_condensed/UbuntuCondensed.css">
 <link rel="stylesheet" href="/fonts/exo2/exo2.css">
+<link rel="stylesheet" href="/fonts/DooM/DooM.css">
 
 <style>
   body{

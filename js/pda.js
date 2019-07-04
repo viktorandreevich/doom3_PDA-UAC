@@ -77,8 +77,8 @@
     // ---------------------------------------------------------------------
       function bottom_menu_draw(){
 
-        var create_menu = function(){
-          var bottom_panel = $("<div>",{
+        var create_display_left = function(){
+          var display = $("<div>",{
             class: "pda-velum-panel-left",
 
             append: $("<div>",{
@@ -100,19 +100,48 @@
             /**/
             
           });
-          bottom_panel.appendTo($(velum_bottom));
+          display.appendTo($(velum_bottom));
         }
-        create_menu();
+
+        var create_display_right = function(){
+          var display = $("<div>",{
+            class: "pda-velum-panel-right",
+            append: $("<div>", {
+              class: "pvpl-container-nor",
+              append: $("<div>",{
+                class: "pvp-background-nor",
+                css:{
+                  "background-position": "-11px " + ($(velum_bottom).height() - 32 - 87)+"px"
+                }, 
+              })
+            })
+          });
+          display.appendTo($(velum_bottom));
+        }
+
+        create_display_left();  // Левый дисплей
+        create_display_right(); // Правый дисплей
+
         $(window).resize(function(){
           bottom_menu_resize();
+          
         });
         $(window).resize();
       }
     // ---------------------------------------------------------------------  
       function bottom_menu_resize(){
+        /*LEFT*/
+        l_widht = $("._bg-3").width() + ($("._bg-4").width() * 0.3);
         $(".pvp-background").css("background-position", "-11px " + 
           ($(velum_bottom).height() - 13 - 106)+"px");
-        $(".pda-velum-panel-left").css("width", $("._bg-3").width() + ($("._bg-4").width() * 0.3));
+        $(".pda-velum-panel-left").css("width", l_widht);
+
+        /*RIGHT*/
+        r_widht = ($(window).innerWidth()-$(".pvpl-container").width()-59);
+        $(".pvp-background-nor").css("background-position", "-11px " + 
+          ($(velum_bottom).height() - 32 - 88)+"px");
+        $(".pda-velum-panel-right").css("width", r_widht);
+        $(".pvp-background-nor").css("left", ($(window).innerWidth()-r_widht-44)*(-1));
       }
     // ---------------------------------------------------------------------
       function bottom_menu_kill(){
