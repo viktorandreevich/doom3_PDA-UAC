@@ -117,6 +117,7 @@
             })
           });
           display.appendTo($(velum_bottom));
+          create_bottom_menu($.fn.bottom_menu_defaults);
         }
 
         create_display_left();  // Левый дисплей
@@ -300,6 +301,67 @@
             }
           }, 100);  
     	}
+    // ---------------------------------------------------------------------
+      function create_bottom_menu(menuList){
+        var size = 0; // Размер списка меню
+        var pda_hmenu = $("<div>",{
+          class: "pda_hmenu_coteiner",
+          append: $("<div>",{
+            class: "pda_hmenu"  
+          })
+        });
+        pda_hmenu.appendTo(".pda-velum-panel-right");
+        console.log($(".pda-velum-panel-right"));
+    
+        for(var itm in menuList){
+          if (menuList.hasOwnProperty(itm)) 
+            size++;
+          if (menuList[itm].disp == "NULL"){
+            var menu = $("<div>",{
+              class: "pda_hm_btn hm_btn_"+size,
+              append: $("<span>",{
+                text: menuList[itm].name,
+                append: $("<div>",{
+                  class: "hm_btn_img",
+                  css: {
+                    "position": "absolute",
+                    "top": "5px",
+                    "background": "url(img/pda/btn/bottom_menu/"+menuList[itm].img+")",
+                    "width": "50px",
+                    "height": "50px",
+                  }
+                })
+              })
+            })
+            menu.appendTo(".pda_hmenu");
+          }
+          else{
+            var menu = $("<div>",{
+              class: "pda_hm_btn hm_btn_"+size,
+              append: $("<span>",{
+                text: menuList[itm].name,
+                append: $("<div>",{
+                  class: "hmbt-dis",
+                  append: $("<span>",{
+                    text: menuList[itm].disp
+                  })
+                })
+                .add("<div>",{
+                  class: "hm_btn_img",
+                  css: {
+                    "position": "absolute",
+                    "top": "5px",
+                    "background": "url(img/pda/btn/bottom_menu/"+menuList[itm].img+")",
+                    "width": "50px",
+                    "height": "50px",
+                  }
+                })
+              })
+            })
+            menu.appendTo(".pda_hmenu");
+          }
+        }
+      }
   $.fn.extend ({
       pda_init: function(options){
         return $(this).append(init());
@@ -311,8 +373,12 @@
         return close();
       },
       pda_create_left_menu : function(options){
-        options = $.extend({}, $.fn.defaults, options);
-        create_left_menu(options.menu_itms)
+        options = $.extend({}, $.fn.left_menu_defaults, options);
+        create_left_menu(options.menu_itms);
+      },
+      pda_create_bottom_menu: function(menu){
+        menu = $.extend({}, $.fn.bottom_menu_defaults, menu);
+        create_bottom_menu(menu);
       },
       pda_widget: function(widget, options){
         $(widjets_space).widjet(widget, options);
@@ -322,7 +388,7 @@
       }
   });
 
-	$.fn.defaults = { 
+	$.fn.left_menu_defaults = { 
     menu_itms : [
       { itm_lable : "Вход", selected : 0 },
       { itm_lable : "Регистрация", selected : 1 },
@@ -337,13 +403,63 @@
     class: "pda",
   };
 
+  $.fn.bottom_menu_defaults = {
+    itm0: {
+      name: "",
+      img:  "pda_bm_chat00.svg",
+      disp: "999"
+    },
+    itm1: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "99"
+    },
+    itm2: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "9"
+    },
+    itm3: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "99"
+    },
+    itm4: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "NULL"
+    },
+    itm5: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "1566"
+    },
+    itm6: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "21"
+    },
+    itm7: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "3"
+    },
+    itm8: {
+      name: "",
+      img:  "pda_bm_default.svg",
+      disp: "43"
+    }
+  };
+
 })(jQuery)
 
 $("#pda").pda_init();
 $("#pda").pda_create_left_menu();
 
+
 $('.nb-velum-center span').click(function() {
   $("#pda").pda_open();
+  //$("#pda").pda_create_bottom_menu();
 });
 
 $($('.nb-pda-melu-left ul > li')[6]).click(function() {
