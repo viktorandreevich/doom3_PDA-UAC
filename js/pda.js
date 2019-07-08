@@ -122,10 +122,15 @@
 
         create_display_left();  // Левый дисплей
         create_display_right(); // Правый дисплей
+        exit_button();
+
+        $('#widjet-btn-exit').click(function() {
+          $(widjets_space).widjet.rm();
+          close();
+        });
 
         $(window).resize(function(){
           bottom_menu_resize();
-          
         });
         $(window).resize();
       }
@@ -141,12 +146,36 @@
         r_widht = ($(window).innerWidth()-$(".pvpl-container").width()-59);
         $(".pvp-background-nor").css("background-position", "-11px " + 
           ($(velum_bottom).height() - 32 - 88)+"px");
-        $(".pda-velum-panel-right").css("width", r_widht);
+        $(".pda-velum-panel-right").css("width", r_widht-150);
         $(".pvp-background-nor").css("left", ($(window).innerWidth()-r_widht-44)*(-1));
       }
     // ---------------------------------------------------------------------
       function bottom_menu_kill(){
         $(".pda-velum-panel-left").remove();
+        $(".pda-velum-panel-right").remove();
+        $("#widjet-btn-exit").remove();
+      }
+    // ---------------------------------------------------------------------
+      function exit_button(){
+        var ex_button = $("<div>",{
+          id:"widjet-btn-exit",
+          class:"widjet-btn widjet-btn-right",
+          css:{
+            "width": "148px",
+            "height": "87px",
+            "top": "17px",
+            "right": "20px",
+            "z-index":"1"
+          },
+          append:$("<a>",{
+            class:"noskew-wrapper orange-outline",
+            append:$("<div>",{
+              class:"orange-normal",
+              text:"ВЫХОД"
+            })
+          }),
+        });
+        ex_button.appendTo($(velum_bottom));
       }
     // ---------------------------------------------------------------------
     	function open(){
@@ -311,7 +340,6 @@
           })
         });
         pda_hmenu.appendTo(".pda-velum-panel-right");
-        console.log($(".pda-velum-panel-right"));
     
         for(var itm in menuList){
           if (menuList.hasOwnProperty(itm)) 
@@ -396,8 +424,7 @@
       { itm_lable : "check in", selected : 0 },
       { itm_lable : "messageBox", selected : 0 },
       { itm_lable : "Закрыть виджет", selected : 0 },
-      { itm_lable : "Загрузка данных", selected : 0 },
-      { itm_lable : "Закрыть PDA", selected : 0 }
+      { itm_lable : "Загрузка данных", selected : 0 }
     ],
     style: "solid",
     class: "pda",
@@ -406,8 +433,8 @@
   $.fn.bottom_menu_defaults = {
     itm0: {
       name: "",
-      img:  "pda_bm_chat00.svg",
-      disp: "999"
+      img:  "pda_bm_default.svg",
+      disp: "9"
     },
     itm1: {
       name: "",
@@ -417,12 +444,12 @@
     itm2: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "9"
+      disp: "999"
     },
     itm3: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "99"
+      disp: "9999"
     },
     itm4: {
       name: "",
@@ -432,22 +459,22 @@
     itm5: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "1566"
+      disp: "999"
     },
     itm6: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "21"
+      disp: "999"
     },
     itm7: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "3"
+      disp: "999"
     },
     itm8: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "43"
+      disp: "999"
     }
   };
 
@@ -456,19 +483,12 @@
 $("#pda").pda_init();
 $("#pda").pda_create_left_menu();
 
-
 $('.nb-velum-center span').click(function() {
   $("#pda").pda_open();
-  //$("#pda").pda_create_bottom_menu();
 });
 
 $($('.nb-pda-melu-left ul > li')[6]).click(function() {
   $("#pda").pdaDataLoader('Загрузка в PDA', 'NerdBox');
-});
-
-$($('.nb-pda-melu-left ul > li')[7]).click(function() {
-  $("#pda").pda_widget_remove();
-  $("#pda").pda_close();
 });
 
 $($('.nb-pda-melu-left ul > li')[2]).click(function() {
@@ -499,7 +519,8 @@ $($('.nb-pda-melu-left ul > li')[3]).click(function() {
 });
 
 $($('.nb-pda-melu-left ul > li')[5]).click(function() {
-$("#pda").pda_widget_remove(); }); 
+  $("#pda").pda_widget_remove(); 
+}); 
 
 
 

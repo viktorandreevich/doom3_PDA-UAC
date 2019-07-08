@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100"
-   height="100"
-   viewBox="0 0 26.458333 26.458334"
+   width="65"
+   height="65"
+   viewBox="0 0 17.197916 17.197917"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -54,11 +54,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-270.54165)">
+     transform="translate(0,-279.80207)">
     <g
        id="g1506"
-       style="stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none"
-       transform="matrix(0.55216291,0,0,0.55216291,0.94282193,130.15548)">
+       style="stroke:#ffffff;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.4151211,0,0,0.4151211,0.4242345,172.94125)">
       <g
          transform="matrix(0.26787042,0,0,0.26787042,30.892849,248.82111)"
          style="stroke:#ffffff;stroke-width:2.9631865;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -82,29 +82,6 @@
          id="path840"
          d="m 13.755128,269.9493 v -8.53754 H 34.535172 V 295.723 H 13.788494 v -4.00676"
          style="fill:none;stroke:#ffffff;stroke-width:0.79374999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    </g>
-    <g
-       id="g1469"
-       transform="matrix(0.55216291,0,0,0.55216291,0.94282193,130.15548)">
-      <text
-         id="text844"
-         y="259.84409"
-         x="22.413912"
-         style="font-style:normal;font-weight:normal;font-size:1.91254914px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.04781373;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.04781373;stroke-opacity:1"
-           y="259.84409"
-           x="22.413912"
-           id="tspan842"
-           sodipodi:role="line">EXIT</tspan></text>
-      <rect
-         ry="0.18829492"
-         y="258.12305"
-         x="21.981464"
-         height="2.0193629"
-         width="5.137166"
-         id="rect846"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.24853674;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>
