@@ -1,12 +1,17 @@
 (function($){
 	/*Widjets space*/
-	var widjets_space  = '.nb-pda-widjets-space',  // Контейнер для виджетов
-      user_id_title  = '.vt-w-userid',           // Титульная надпись
+	var widjets_space  = '.nb-pda-widjets-space',         // Контейнер для виджетов
+      user_id_title  = '.vt-w-userid',                  // Титульная надпись
       velum          = '.nb-pda-velum',
-      velum_top 	   = '.nb-velum-top',          // Верхняя створка
-      velum_bottom   = '.nb-velum-bottom',       // Надпись "NB-PDA" КНОПКА
-      velum_center   = '.nb-velum-center',       // Нижняя створка
-      left_menu_btn_square = '.nb-pda-menu-chi'; // Квадрат
+      velum_top 	   = '.nb-velum-top',                 // Верхняя створка
+      velum_bottom   = '.nb-velum-bottom',              // Надпись "NB-PDA" КНОПКА
+      velum_center   = '.nb-velum-center',              // Нижняя створка
+      left_menu_btn_square  = '.nb-pda-menu-chi',       // Квадрат
+      pvp_background        = '.pvp-background',
+      pda_velum_panel_left  = '.pda-velum-panel-left',
+      pvp_background_nor    = '.pvp-background-nor',
+      pda_velum_panel_right = '.pda-velum-panel-right',
+      widjet_btn_exit       = '#widjet-btn-exit';
 
     // ---------------------------------------------------------------------
     	function init(options){
@@ -50,21 +55,6 @@
                 .add("<div>", {class: "vt-wrapper-inner _bg-5"})
               })
               .add("<div>",{class: "nb-velum-base-bottom"})
-
-              /*Кнопки нижний ряд*/
-              /*.add("<ul>",{
-                class: "btn_control_case",
-                append: $("<li>",{
-                  append: $("<p>",{
-                    append: $("<button>",{
-                      class: "pda-btn-exit",
-                        append: $("<a>",{
-                          text: "EXIT"
-                        })
-                    })
-                  })
-                })
-              }) */ 
             })  
         })
             /**/
@@ -76,7 +66,6 @@
     	}
     // ---------------------------------------------------------------------
       function bottom_menu_draw(){
-
         var create_display_left = function(){
           var display = $("<div>",{
             class: "pda-velum-panel-left",
@@ -117,17 +106,11 @@
             })
           });
           display.appendTo($(velum_bottom));
-          create_bottom_menu($.fn.bottom_menu_defaults);
-        }
-
+          //create_bottom_menu(/*$.fn.bottom_menu_defaults*/); // Меню снизу
+        }     
         create_display_left();  // Левый дисплей
         create_display_right(); // Правый дисплей
-        exit_button();
-
-        $('#widjet-btn-exit').click(function() {
-          $(widjets_space).widjet.rm();
-          close();
-        });
+        exit_button();          // Кнопка "ВЫХОД"
 
         $(window).resize(function(){
           bottom_menu_resize();
@@ -135,25 +118,80 @@
         $(window).resize();
       }
     // ---------------------------------------------------------------------  
+      function bottom_menu_animate(a){
+        switch(a){
+          case 'open':
+          $(pda_velum_panel_left).css({
+            "opacity":"1",
+            /*"top": "13px",
+            "left": "11px",
+            transform": "scale(1.0)"*/
+            "-webkit-transition": "all 0s",
+            "-moz-transition": "all 0s",
+            "transition": "all 0s"
+          });
+          $(pda_velum_panel_right).css({
+            "opacity":"1",
+           /* "top": "32px",
+            "right": "183px",
+            "transform": "scale(1.0)"*/
+            "-webkit-transition": "all 0s",
+            "-moz-transition": "all 0s",
+            "transition": "all 0s"
+          });
+          $("#widjet-btn-exit").css({
+            "opacity": "1",
+            "display":"block"
+          });
+          break;
+          case 'close':
+          $(pda_velum_panel_left).css({
+            "opacity":"0",
+            /*"top": "-13px",
+            "left": "-500px",
+            "transform": "scale(0.5)"*/
+            "-webkit-transition": "all .5s",
+            "-moz-transition": "all .5s",
+            "transition": "all .5s"
+          });
+          $(pda_velum_panel_right).css({
+            "opacity":"0",
+            /*"top": "-32px",
+            "right": "500px",
+            "transform": "scale(0.5)"*/
+            "-webkit-transition": "all .5s",
+            "-moz-transition": "all .5s",
+            "transition": "all .5s"
+          });
+          $("#widjet-btn-exit").css({
+            "opacity": "0",
+            "display":"none"
+          });
+          break;
+          default:
+          break;
+        }
+      }
+    // ---------------------------------------------------------------------
       function bottom_menu_resize(){
         /*LEFT*/
         l_widht = $("._bg-3").width() + ($("._bg-4").width() * 0.3);
-        $(".pvp-background").css("background-position", "-11px " + 
+        $(pvp_background).css("background-position", "-11px " + 
           ($(velum_bottom).height() - 13 - 106)+"px");
-        $(".pda-velum-panel-left").css("width", l_widht);
+        $(pda_velum_panel_left).css("width", l_widht);
 
         /*RIGHT*/
         r_widht = ($(window).innerWidth()-$(".pvpl-container").width()-59);
-        $(".pvp-background-nor").css("background-position", "-11px " + 
+        $(pvp_background_nor).css("background-position", "-11px " + 
           ($(velum_bottom).height() - 32 - 88)+"px");
-        $(".pda-velum-panel-right").css("width", r_widht-150);
-        $(".pvp-background-nor").css("left", ($(window).innerWidth()-r_widht-44)*(-1));
+        $(pda_velum_panel_right).css("width", r_widht-150);
+        $(pvp_background_nor).css("left", ($(window).innerWidth()-r_widht-44)*(-1));
       }
     // ---------------------------------------------------------------------
       function bottom_menu_kill(){
-        $(".pda-velum-panel-left").remove();
-        $(".pda-velum-panel-right").remove();
-        $("#widjet-btn-exit").remove();
+        $(pda_velum_panel_left).remove();
+        $(pda_velum_panel_right).remove();
+        $(widjet_btn_exit).remove();
       }
     // ---------------------------------------------------------------------
       function exit_button(){
@@ -174,6 +212,10 @@
               text:"ВЫХОД"
             })
           }),
+        }).click(function() {           // Событие по нажатию кнопки "ВЫХОД"        
+          $(widjets_space).widjet.rm();
+          bottom_menu_animate('close');
+          close();
         });
         ex_button.appendTo($(velum_bottom));
       }
@@ -188,6 +230,9 @@
             $(widjets_space).css('opacity','1');
               show_left_menu($('.nb-pda-melu-left ul > li'));
               bottom_menu_draw();
+              setTimeout(function(){
+                bottom_menu_animate('open');
+              }, 500);     
           }, 300);
         }, 300);
         /**/
@@ -211,10 +256,10 @@
           }
           else {
             clearInterval(close_pda_timer);
+            bottom_menu_kill();
           }
         }, 500);  
-        /**/
-        bottom_menu_kill();
+        /**/  
     	}    
     // ---------------------------------------------------------------------
     	function create_left_menu(itms){
@@ -333,6 +378,9 @@
     // ---------------------------------------------------------------------
       function create_bottom_menu(menuList){
         var size = 0; // Размер списка меню
+        if($('*').is('.pda_hmenu_coteiner')) {
+          $('.pda_hmenu_coteiner').remove();
+        }
         var pda_hmenu = $("<div>",{
           class: "pda_hmenu_coteiner",
           append: $("<div>",{
@@ -340,7 +388,6 @@
           })
         });
         pda_hmenu.appendTo(".pda-velum-panel-right");
-    
         for(var itm in menuList){
           if (menuList.hasOwnProperty(itm)) 
             size++;
@@ -404,9 +451,9 @@
         options = $.extend({}, $.fn.left_menu_defaults, options);
         create_left_menu(options.menu_itms);
       },
-      pda_create_bottom_menu: function(menu){
-        menu = $.extend({}, $.fn.bottom_menu_defaults, menu);
-        create_bottom_menu(menu);
+      pda_create_bottom_menu: function(options){
+        options = $.extend({}, $.fn.bottom_menu_defaults, options);
+        create_bottom_menu(options);
       },
       pda_widget: function(widget, options){
         $(widjets_space).widjet(widget, options);
@@ -418,8 +465,8 @@
 
 	$.fn.left_menu_defaults = { 
     menu_itms : [
-      { itm_lable : "Вход", selected : 0 },
-      { itm_lable : "Регистрация", selected : 1 },
+      { itm_lable : "Вход", selected : 1 },
+      { itm_lable : "Регистрация", selected : 0 },
       { itm_lable : "Search by IP", selected : 0 },
       { itm_lable : "check in", selected : 0 },
       { itm_lable : "messageBox", selected : 0 },
@@ -434,12 +481,12 @@
     itm0: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "9"
+      disp: "NULL"
     },
     itm1: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "99"
+      disp: "999"
     },
     itm2: {
       name: "",
@@ -449,32 +496,7 @@
     itm3: {
       name: "",
       img:  "pda_bm_default.svg",
-      disp: "9999"
-    },
-    itm4: {
-      name: "",
-      img:  "pda_bm_default.svg",
       disp: "NULL"
-    },
-    itm5: {
-      name: "",
-      img:  "pda_bm_default.svg",
-      disp: "999"
-    },
-    itm6: {
-      name: "",
-      img:  "pda_bm_default.svg",
-      disp: "999"
-    },
-    itm7: {
-      name: "",
-      img:  "pda_bm_default.svg",
-      disp: "999"
-    },
-    itm8: {
-      name: "",
-      img:  "pda_bm_default.svg",
-      disp: "999"
     }
   };
 
@@ -485,10 +507,9 @@ $("#pda").pda_create_left_menu();
 
 $('.nb-velum-center span').click(function() {
   $("#pda").pda_open();
-});
-
-$($('.nb-pda-melu-left ul > li')[6]).click(function() {
-  $("#pda").pdaDataLoader('Загрузка в PDA', 'NerdBox');
+  setTimeout(function(){
+    $("#pda").pda_create_bottom_menu();  // Меню снизу
+  },1000);
 });
 
 $($('.nb-pda-melu-left ul > li')[2]).click(function() {
@@ -498,13 +519,6 @@ $($('.nb-pda-melu-left ul > li')[2]).click(function() {
     w_top: 0.2,
     w_left: 0.2,
     w_space: '.nb-pda-widjets-space'
-  });
-});
-
-$($('.nb-pda-melu-left ul > li')[4]).click(function() {
-  var messageText = 'В игре "DOOM 3 BFG Edition" для получения достижений и более глубокого погружения в сюжет необходимо искать <strong style="color:red;">КПК</strong>, которые разбросаны по уровням, видеодиски и коды от замков на шкафах. В этом руководстве представлены видео, по которым удобно собирать все КПК, видео и коды во всех частях переиздания - "Doom 3", "Doom 3: Resurrection of Evil" и "Doom 3: The Lost Mission".';
-  $("body").showMessage(messageText,'A', function(){
-    $("body").showMessage("callback",'A');
   });
 });
 
@@ -518,9 +532,20 @@ $($('.nb-pda-melu-left ul > li')[3]).click(function() {
   });
 });
 
+$($('.nb-pda-melu-left ul > li')[4]).click(function() {
+  var messageText = 'В игре "DOOM 3 BFG Edition" для получения достижений и более глубокого погружения в сюжет необходимо искать <strong style="color:red;">КПК</strong>, которые разбросаны по уровням, видеодиски и коды от замков на шкафах. В этом руководстве представлены видео, по которым удобно собирать все КПК, видео и коды во всех частях переиздания - "Doom 3", "Doom 3: Resurrection of Evil" и "Doom 3: The Lost Mission".';
+  $("body").showMessage(messageText,'A', function(){
+    $("body").showMessage("callback",'A');
+  });
+});
+
 $($('.nb-pda-melu-left ul > li')[5]).click(function() {
   $("#pda").pda_widget_remove(); 
 }); 
+
+$($('.nb-pda-melu-left ul > li')[6]).click(function() {
+  $("#pda").pdaDataLoader('Загрузка в PDA', 'NerdBox');
+});
 
 
 
