@@ -4,7 +4,7 @@
     height: 24px;
     /*border: 2px solid #70898b;*/
     /*background: linear-gradient(to bottom, rgba(76, 102, 114, 1.0), #324444);*/
-    background: url(/img/pda/pda/pda_menu_itm.svg) -3px, 0px;
+    background: url(../../img/pda/pda/pda_menu_itm.svg) -3px, 0px;
     margin-bottom: 5px;
     cursor: pointer;
   }
@@ -62,7 +62,7 @@
     height: 24px;
     /*border: 2px solid #70898b;*/
     /*background: linear-gradient(to bottom, rgba(76, 102, 114, 1.0), #324444);*/
-    background: url(/img/pda/pda/pda_menu_itm.svg) 197px, 0px;
+    background: url(../../img/pda/pda/pda_menu_itm.svg) 197px, 0px;
     margin-bottom: 5px;
     cursor: pointer;
     /*margin-left: 44px;*/

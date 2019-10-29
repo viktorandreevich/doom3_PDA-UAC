@@ -8,7 +8,7 @@
       <li style="">
         <div class="wigr-ava">
           <div class="scanlines"></div> 
-          <img src="/img/pda/widgets/all/widjet-user-ava.svg" alt="">
+          <img src="img/pda/widgets/all/widjet-user-ava.svg" alt="">
         </div> 
         <div class="male-salect">
           <div class="ms-man"></div>

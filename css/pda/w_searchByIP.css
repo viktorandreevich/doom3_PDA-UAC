@@ -1,6 +1,6 @@
 	
 	.widget-ava{
-  		background: url(/img/pda/widgets/all/widjet-user-ava.svg) no-repeat;
+  		background: url(../../img/pda/widgets/all/widjet-user-ava.svg) no-repeat;
   		width: 120px;
   		height: 150px;
   		margin-bottom: 11px;
@@ -344,13 +344,13 @@
       height: 100%;
       z-index: 1;
     }
-    ._wt-bg-0{background: url(/img/pda/pda/pda_wnd_top_lf.svg) 0, 0, no-repeat;}
-    ._wt-bg-1{background: url(/img/pda/pda/pda_wnd_top_ct.svg) 122px, 0px, repeat-x;}
-    ._wt-bg-2{background: url(/img/pda/pda/pda_wnd_top_rh.svg) 100%, 0px, no-repeat;}
+    ._wt-bg-0{background: url(../../img/pda/pda/pda_wnd_top_lf.svg) 0, 0, no-repeat;}
+    ._wt-bg-1{background: url(../../img/pda/pda/pda_wnd_top_ct.svg) 122px, 0px, repeat-x;}
+    ._wt-bg-2{background: url(../../img/pda/pda/pda_wnd_top_rh.svg) 100%, 0px, no-repeat;}
 
-    ._wt-bg-3{background: url(/img/pda/pda/pda_wnd_bottom_lf.svg) 0, 0, no-repeat;}
-    ._wt-bg-4{background: url(/img/pda/pda/pda_wnd_bottom_ct.svg) 122px, 0px, repeat-x;}
-    ._wt-bg-5{background: url(/img/pda/pda/pda_wnd_bottom_rh.svg) 100%, 0px, no-repeat;}
+    ._wt-bg-3{background: url(../../img/pda/pda/pda_wnd_bottom_lf.svg) 0, 0, no-repeat;}
+    ._wt-bg-4{background: url(../../img/pda/pda/pda_wnd_bottom_ct.svg) 122px, 0px, repeat-x;}
+    ._wt-bg-5{background: url(../../img/pda/pda/pda_wnd_bottom_rh.svg) 100%, 0px, no-repeat;}
 
     .not-found-usr{
       position: absolute;

@@ -131,7 +131,7 @@
         ПОИСК ПО IP ( •_•)
 ------------------------------------------------------------------------------------------*/
   		searchByIP: function(options){
-        widjets.initWidjet(options, "/App/views/pda/view.widjet.search.ip.php", {
+        widjets.initWidjet(options, "App/views/pda/view.widjet.search.ip.php", {
           'controller':'WidjetSearchIp',
           'action':'index'
         }, function(){
@@ -218,7 +218,7 @@
         });
   		},
       checkIn: function(options){
-        widjets.initWidjet(options, "/App/views/pda/view.widjet.check.in.php", {
+        widjets.initWidjet(options, "App/views/pda/view.widjet.check.in.php", {
           'controller':'WidjetSearchIp',
           'action':'index'
         }, function(){

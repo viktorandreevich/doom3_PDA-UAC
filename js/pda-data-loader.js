@@ -21,7 +21,7 @@
 			});
 
 			$.ajax({
-          url: "/App/views/pda/view.pda.data.loader.php",
+          url: "App/views/pda/view.pda.data.loader.php",
           type: "POST",
           data: {
 					    'process':pro,

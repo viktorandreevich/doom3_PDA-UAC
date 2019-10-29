@@ -17,12 +17,12 @@
   .nb-velum-base-top{
     width: 100%;
     height: calc(100% - 120px);
-    background: url(/img/pda/pda/velum-top-fr.svg) repeat;
+    background: url(../../img/pda/pda/velum-top-fr.svg) repeat;
   }
   .nb-velum-base-bottom{
      width: 100%;
     height: calc(100% - 120px);
-    background: url(/img/pda/pda/velum-top-fr.svg) repeat;
+    background: url(../../img/pda/pda/velum-top-fr.svg) repeat;
   }
   .nb-velum-bord{
     display: flex;
@@ -50,29 +50,29 @@
   }
 
   .vt-wrapper-inner._bg-0 {
-    background: url(/img/pda/pda/velum-top-left.svg) repeat-x;
+    background: url(../../img/pda/pda/velum-top-left.svg) repeat-x;
   }
 
   .vt-wrapper-inner._bg-1 {
-    background: url(/img/pda/pda/velum-top-center.svg) no-repeat;
+    background: url(../../img/pda/pda/velum-top-center.svg) no-repeat;
     max-width: 378.333px;
   }
 
   .vt-wrapper-inner._bg-2 {
-    background: url(/img/pda/pda/velum-top-right.svg) repeat-x;
+    background: url(../../img/pda/pda/velum-top-right.svg) repeat-x;
   }
 
   .vt-wrapper-inner._bg-3 {
-    background: url(/img/pda/pda/velum-bottom-left.svg) repeat-x;
+    background: url(../../img/pda/pda/velum-bottom-left.svg) repeat-x;
   }
 
   .vt-wrapper-inner._bg-4 {
-    background: url(/img/pda/pda/velum-bottom-center.svg) no-repeat;
+    background: url(../../img/pda/pda/velum-bottom-center.svg) no-repeat;
     max-width: 378.333px;
   }
 
   .vt-wrapper-inner._bg-5 {
-    background: url(/img/pda/pda/velum-bottom-right.svg) repeat-x;
+    background: url(../../img/pda/pda/velum-bottom-right.svg) repeat-x;
   }
 
   .nb-velum-bottom{
@@ -93,7 +93,7 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    background: url(/img/pda/pda/velum-center-center.svg) repeat-x;
+    background: url(../../img/pda/pda/velum-center-center.svg) repeat-x;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
@@ -122,7 +122,7 @@
     height: 35px;
     margin-left: -251px;
     margin-top: 86px;
-    background: url(/img/pda/pda/velum-top-h0.svg);
+    background: url(../../img/pda/pda/velum-top-h0.svg);
   }
 
   .vt-w-userid{

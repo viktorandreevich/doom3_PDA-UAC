@@ -26,7 +26,7 @@
 
 
 			$.ajax({
-            	url: "/App/views/view.message-box.php",
+            	url: "App/views/view.message-box.php",
             	type: "POST",
             	dataType: 'html',
           		success: function(data) {

@@ -1,6 +1,6 @@
 
 
-<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/pda/future.css">
 <link rel="stylesheet" href="/fonts/ubuntu_condensed/UbuntuCondensed.css">
 <link rel="stylesheet" href="/fonts/exo2/exo2.css">
@@ -25,7 +25,7 @@
 
 <div id="pda"></div>
   
-<script src="../../js/jquery/jquery.min.js"></script>
+<script src="js/jquery/jquery.min.js"></script>
 <script src="js/message/message.js"></script>
 <script src="js/message/message_tracking.js"></script>
 <script src="js/pkge/content.request.js"></script>
